@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="DesafioTagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer1" translatesAutoresizingMaskIntoConstraints="NO" id="Ev4-5K-Tlh" userLabel="laranja">
+                                <rect key="frame" x="40" y="154" width="295" height="148"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer3" translatesAutoresizingMaskIntoConstraints="NO" id="Zpu-wi-dbA" userLabel="azulClaro">
+                                <rect key="frame" x="262" y="154" width="73" height="148"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer5" translatesAutoresizingMaskIntoConstraints="NO" id="PUu-eh-iyE" userLabel="verdeClaro">
+                                <rect key="frame" x="40" y="154" width="148" height="295"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer7" translatesAutoresizingMaskIntoConstraints="NO" id="9Jh-a6-WT8" userLabel="azulEscuro">
+                                <rect key="frame" x="41" y="376" width="221" height="73"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer8" translatesAutoresizingMaskIntoConstraints="NO" id="Cw5-yt-bJ8" userLabel="amarelo">
+                                <rect key="frame" x="188" y="303" width="147" height="147"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer6" translatesAutoresizingMaskIntoConstraints="NO" id="bxQ-Vl-WfW" userLabel="verdeEscuro">
+                                <rect key="frame" x="114" y="303" width="148" height="73"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer4" translatesAutoresizingMaskIntoConstraints="NO" id="lt7-Je-2yG" userLabel="vermelho">
+                                <rect key="frame" x="188" y="228" width="147" height="148"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="279.5" y="334.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="BfR-M7-iwf">
+            <objects>
+                <viewController id="3PH-Pe-zWG" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Q0o-kk-PoP"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fub-Hw-Ohc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4VA-uR-ZsK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer1" translatesAutoresizingMaskIntoConstraints="NO" id="OwR-Db-g2e" userLabel="laranja">
+                                <rect key="frame" x="40" y="186" width="295" height="148"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer3" translatesAutoresizingMaskIntoConstraints="NO" id="SlB-LM-6zW" userLabel="azulClaro">
+                                <rect key="frame" x="262" y="186" width="73" height="148"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer4" translatesAutoresizingMaskIntoConstraints="NO" id="YF7-43-k2l" userLabel="vermelho">
+                                <rect key="frame" x="188" y="260" width="147" height="148"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer5" translatesAutoresizingMaskIntoConstraints="NO" id="Duy-fC-bp0" userLabel="verdeClaro">
+                                <rect key="frame" x="40" y="186" width="148" height="295"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer7" translatesAutoresizingMaskIntoConstraints="NO" id="6O4-3P-FMg" userLabel="azulEscuro">
+                                <rect key="frame" x="41" y="408" width="221" height="73"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer8" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-dy-b7Q" userLabel="amarelo">
+                                <rect key="frame" x="188" y="335" width="147" height="147"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Layer6" translatesAutoresizingMaskIntoConstraints="NO" id="x43-V8-y91" userLabel="verdeEscuro">
+                                <rect key="frame" x="114" y="80" width="148" height="73"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tn-Xm-H3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="925.5" y="307.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Layer1" width="1074" height="537"/>
+        <image name="Layer3" width="262" height="521"/>
+        <image name="Layer4" width="536" height="534"/>
+        <image name="Layer5" width="540" height="1075"/>
+        <image name="Layer6" width="522" height="262"/>
+        <image name="Layer7" width="802" height="267"/>
+        <image name="Layer8" width="533" height="531"/>
+    </resources>
+</document>
