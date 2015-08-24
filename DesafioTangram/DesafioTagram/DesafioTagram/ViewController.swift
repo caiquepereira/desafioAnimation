@@ -34,17 +34,22 @@ class ViewController: UIViewController {
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
         self.view.addGestureRecognizer(swipeRight)
         
-        let tap = UITapGestureRecognizer(target: self, action: Selector("oneTap"))
-        tap.numberOfTapsRequired = 1
-        self.view.addGestureRecognizer(tap)
+        let tripleTap = UITapGestureRecognizer(target: self, action: Selector("tripleTap"))
+        tripleTap.numberOfTapsRequired = 3
+        self.view.addGestureRecognizer(tripleTap)
         
         let doubleTap = UITapGestureRecognizer(target: self, action: Selector("doubleTap"))
         doubleTap.numberOfTapsRequired = 2
         self.view.addGestureRecognizer(doubleTap)
+        doubleTap.requireGestureRecognizerToFail(tripleTap)
+
+        let tap = UITapGestureRecognizer(target: self, action: Selector("oneTap"))
+        tap.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(tap)
+        tap.requireGestureRecognizerToFail(doubleTap)
         
-        let tripleTap = UITapGestureRecognizer(target: self, action: Selector("tripleTap"))
-        tripleTap.numberOfTapsRequired = 3
-        self.view.addGestureRecognizer(tripleTap)
+        
+        
         
         let twoFingers = UITapGestureRecognizer(target: self, action: Selector("twoFingers"))
         twoFingers.numberOfTouchesRequired = 2
@@ -55,12 +60,12 @@ class ViewController: UIViewController {
         
         
         
-        let imageName = "Layer5.png"
-        let image = UIImage(named: imageName)
-        let imageView = UIImageView(image: image!)
-        imageView.center.x = eixoX
-        imageView.center.y = eixoY
-        view.addSubview(imageView)
+//        let imageName = "Layer5.png"
+//        let image = UIImage(named: imageName)
+//        let imageView = UIImageView(image: image!)
+//        imageView.center.x = eixoX
+//        imageView.center.y = eixoY
+//        view.addSubview(imageView)
         
     
         
