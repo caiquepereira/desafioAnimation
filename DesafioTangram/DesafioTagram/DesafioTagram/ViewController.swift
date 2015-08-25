@@ -21,32 +21,11 @@ class ViewController: UIViewController {
     var viewVerdeEscuro: UIImageView!
     var viewVermelho: UIImageView!
     
+    var imageAzulEscuro: UIImage!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.initViews()
-        
-        
-        UIView.animateWithDuration(0.5, animations: {
-            var angle = CGFloat(M_PI/2)
-//            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle)
-            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
-        })
-        
-        UIView.animateWithDuration(1.0, delay: 0.5, options: nil, animations: {
-            var angle = CGFloat(M_PI)
-//            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle)
-//            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle)
-            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
-        }, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -85,10 +64,35 @@ class ViewController: UIViewController {
         self.viewVerdeEscuro.frame = CGRectMake(72, 80, 75, 37)
         self.view.addSubview(self.viewVerdeEscuro)
         
-        let imageAzulEscuro = UIImage(named: "Layer7.png")
+        self.imageAzulEscuro = UIImage(named: "Layer7.png")
         self.viewAzulEscuro = UIImageView(image: imageAzulEscuro!)
         self.viewAzulEscuro.frame = CGRectMake(34, 117, 112, 37)
         self.view.addSubview(self.viewAzulEscuro)
+    }
+    
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        UIView.animateWithDuration(0.5, animations: {
+            var angle45 = CGFloat(M_PI/4)
+            var angle = CGFloat(M_PI * 2 - M_PI/4)
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
+            self.viewLaranja.center = CGPoint(x: 202, y: 356)
+            
+            self.viewVerdeClaro.center = CGPoint(x: 191, y: 356 - self.viewLaranja.frame.height/2)
+            self.viewAmarelo.center = CGPoint(x: self.viewVerdeClaro.center.x  - self.viewVerdeClaro.frame.width/2, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7)
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*3)
+            
+            self.viewVermelho.center = CGPoint(x: self.viewAmarelo.center.x - 20, y: self.viewAmarelo.center.y - self.viewAmarelo.frame.height/1.5)
+            self.viewAzulClaro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/4, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2)
+            
+            
+            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
+            self.viewAzulEscuro.image = image
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewVermelho.center.x - self.viewVermelho.frame.width/4, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2)
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*2)
+            
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*2.5)
+            self.viewAzulEscuro.center = CGPoint(x: self.viewLaranja.center.x + self.viewLaranja.frame.width/2.45, y: self.viewLaranja.center.y - 18.5)
+        })
     }
 
 }
