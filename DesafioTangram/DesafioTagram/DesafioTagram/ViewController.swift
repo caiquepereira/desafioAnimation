@@ -136,7 +136,7 @@ class ViewController: UIViewController {
     }
     
     func twoFingers() {
-        
+        self.drawHouse()
         println("2 fingers")
         
         
@@ -243,6 +243,30 @@ class ViewController: UIViewController {
             self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*3)
             
             self.viewVerdeEscuro.center = CGPoint(x: self.viewAzulEscuro.center.x - self.viewAzulEscuro.frame.width/1.17, y: self.viewAzulEscuro.center.y - self.viewVerdeEscuro.frame.height/4.75)
+            
+        })
+    }
+    
+    func drawHouse() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+            self.normalizeAngles()
+            var angle45 = CGFloat(M_PI/4)
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45*4)
+            self.viewLaranja.center = CGPoint(x: self.view.center.x, y: self.view.center.y)
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*4)
+            self.viewAmarelo.center = CGPoint(x: self.viewLaranja.center.x - self.viewLaranja.frame.width/4, y: self.viewLaranja.center.y)
+            self.viewAzulClaro.center = CGPoint(x: self.viewLaranja.center.x + self.viewLaranja.frame.width/8 * 3, y: self.viewLaranja.center.y)
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewLaranja.center.x + self.viewLaranja.frame.width/4, y: self.viewLaranja.center.y - self.viewLaranja.frame.height/4)
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*4)
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle45*6)
+            self.viewVerdeClaro.center = CGPoint(x: self.viewLaranja.center.x + self.viewLaranja.frame.width/5.8, y: self.viewLaranja.center.y - self.viewLaranja.frame.height/2 - self.viewVerdeClaro.frame.height/2.05)
+            self.viewAzulEscuro.transform = CGAffineTransformIdentity
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*7)
+            self.viewAzulEscuro.transform = CGAffineTransformScale(self.viewAzulEscuro.transform, -1, 1)
+            self.viewAzulEscuro.center = CGPoint(x: self.viewAmarelo.center.x - 10, y: self.viewVerdeClaro.center.y + 10)
+            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewVermelho.center = CGPoint(x: self.viewAzulEscuro.center.x + self.viewAzulEscuro.frame.width/4, y: self.viewAzulEscuro.center.y - self.viewAzulEscuro.frame.height/2)
             
         })
     }
