@@ -123,8 +123,7 @@ class ViewController: UIViewController {
     
     func doubleTap() {
         
-        println("double tap")
-        
+        //peixe
         
     }
     
@@ -160,7 +159,7 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Down:
                 self.drawDog()
                 println("Swiped down")
-            case UISwipeGestureRecognizerDirection.Left:
+            case UISwipeGestureRecognizerDirection.Left://cavalo
                 println("Swiped left")
             case UISwipeGestureRecognizerDirection.Right:
                 self.drawSwan()
