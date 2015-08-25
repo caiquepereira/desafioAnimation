@@ -158,6 +158,7 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Up:
                 println("Swiped up")
             case UISwipeGestureRecognizerDirection.Down:
+                self.drawDog()
                 println("Swiped down")
             case UISwipeGestureRecognizerDirection.Left:
                 println("Swiped left")
@@ -246,6 +247,41 @@ class ViewController: UIViewController {
             
         })
     }
+
+func drawDog() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+            var angle45 = CGFloat(M_PI/4)
+            var angle90 = CGFloat(M_PI/2)
+
+         
+            self.viewLaranja.center = CGPoint(x: 180, y: 200)
+
+            
+            self.viewVerdeClaro.center = CGPoint(x: self.viewLaranja.center.x - (self.viewVerdeClaro.frame.width + 5), y: self.viewLaranja.center.y + 12)
+
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
+
+
+            self.viewAzulClaro.center = CGPoint(x: self.viewVerdeClaro.center.x - self.viewVerdeClaro.frame.width/3.5, y: self.viewVerdeClaro.center.y + (self.viewAzulClaro.frame.height - 35))
+            
+
+            self.viewAmarelo.center = CGPoint(x: self.viewLaranja.center.x + (self.viewAmarelo.frame.width/2)+1, y: self.viewLaranja.center.y + 1)
+
+
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45)
+
+            self.viewAzulEscuro.center = CGPoint(x: self.viewLaranja.center.x + (self.viewLaranja.frame.width/2)+1, y: self.viewLaranja.center.y + self.viewLaranja.frame.height - 9)
+
+
+            self.viewVermelho.center = CGPoint(x: self.viewAmarelo.center.x + self.viewVermelho.frame.width, y: self.viewAmarelo.center.y - self.viewVermelho.frame.height/2)
+
+
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewVermelho.center.x - self.viewVerdeEscuro.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height + 20)
+
+        })
+    }
+
     
     func normalizeAngles() {
         self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(0)
