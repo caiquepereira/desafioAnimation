@@ -82,14 +82,15 @@ class ViewController: UIViewController {
             self.viewVerdeClaro.center = CGPoint(x: 180, y: 300 - self.viewLaranja.frame.height/2)
             self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle45*7)
             
-            self.viewAmarelo.center = CGPoint(x: 128 + self.viewVerdeClaro.frame.width/2, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7 + 300)
-            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*7)
+            self.viewAmarelo.center = CGPoint(x: 156, y: 142)
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*5)
             
-            self.viewVermelho.center = CGPoint(x: 180, y: 170 )
+            self.viewVermelho.center = CGPoint(x: 180, y: 171 )
             self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45*1)
 
             
-            self.viewAzulClaro.center = CGPoint(x: 225, y: 180)
+            self.viewAzulClaro.center = CGPoint(x: 100, y: 218)
+            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle45*2)
 
             
             let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
@@ -98,8 +99,8 @@ class ViewController: UIViewController {
             self.viewVerdeEscuro.center = CGPoint(x: 193, y: 354)
             self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*3)
             
-            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*7)
-            self.viewAzulEscuro.center = CGPoint(x: 155 + self.viewVerdeClaro.frame.width/2, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7 + 300)
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*2)
+            self.viewAzulEscuro.center = CGPoint(x: 298, y: 336)
             self.viewAzulEscuro.transform = CGAffineTransformScale(self.viewAzulEscuro.transform, 1, -1)
         })
     }
