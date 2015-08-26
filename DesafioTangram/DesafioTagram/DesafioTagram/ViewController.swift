@@ -20,8 +20,6 @@ class ViewController: UIViewController {
     var viewAmarelo: UIImageView!
     var viewVerdeEscuro: UIImageView!
     var viewVermelho: UIImageView!
-
-    var imageAzulEscuro: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -297,10 +295,10 @@ func drawRabbit() {
             self.viewVermelho.center = CGPoint(x: 100, y: 250)
 
 
-//            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
-//            self.viewAzulEscuro.image = image
+           
             self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
-            self.viewAzulEscuro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2)
+            self.viewAzulEscuro.transform = CGAffineTransformScale(self.viewAzulEscuro.transform, 1, -1)
+            self.viewAzulEscuro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2-1)
 
     
 
