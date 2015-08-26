@@ -324,7 +324,10 @@ func drawRabbit() {
 
     
     func drawFish(){
+
         UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+
             var angle45 = CGFloat(M_PI/4)
             var angle = CGFloat(M_PI * 2 - M_PI/4)
             //self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
