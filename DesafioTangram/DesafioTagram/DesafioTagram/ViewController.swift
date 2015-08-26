@@ -282,6 +282,47 @@ func drawDog() {
         })
     }
 
+func drawRabbit() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+            var angle45 = CGFloat(M_PI/4)
+            var angle90 = CGFloat(M_PI/2)
+            var angle = CGFloat(M_PI * 2)
+
+            
+
+            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewVermelho.center = CGPoint(x: 100, y: 250)
+
+
+            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
+            self.viewAzulEscuro.image = image
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
+            self.viewAzulEscuro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2)
+
+    
+
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewLaranja.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y + self.viewLaranja.frame.height/2)
+
+            
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle90*3 + angle45)
+            self.viewVerdeClaro.center = CGPoint(x: self.viewLaranja.center.x + self.viewVerdeClaro.frame.width/3, y: self.viewLaranja.center.y + self.viewLaranja.frame.height/3 + 1)
+
+            
+            self.viewAzulClaro.center = CGPoint(x: self.viewLaranja.center.x - self.viewAzulClaro.frame.height/1.75 - 3, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7)
+
+
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle90)
+            self.viewAmarelo.center = CGPoint(x: self.viewVerdeClaro.center.x  - self.viewVerdeClaro.frame.width/10 + 4, y: self.viewVerdeClaro.center.y + self.viewAmarelo.frame.height/1.75)
+
+
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle)
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewAmarelo.center.x - self.viewAmarelo.frame.width/1.25 + 3, y: self.viewAmarelo.center.y)
+
+        })
+    }
+
     
     func normalizeAngles() {
         self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(0)
