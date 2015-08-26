@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     var viewVerdeEscuro: UIImageView!
     var viewVermelho: UIImageView!
 
+    var imageAzulEscuro: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -156,6 +157,7 @@ class ViewController: UIViewController {
             
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Up:
+                self.drawRabbit()
                 println("Swiped up")
             case UISwipeGestureRecognizerDirection.Down:
                 self.drawDog()
@@ -295,8 +297,8 @@ func drawRabbit() {
             self.viewVermelho.center = CGPoint(x: 100, y: 250)
 
 
-            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
-            self.viewAzulEscuro.image = image
+//            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
+//            self.viewAzulEscuro.image = image
             self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
             self.viewAzulEscuro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2)
 
@@ -317,7 +319,7 @@ func drawRabbit() {
             self.viewAmarelo.center = CGPoint(x: self.viewVerdeClaro.center.x  - self.viewVerdeClaro.frame.width/10 + 4, y: self.viewVerdeClaro.center.y + self.viewAmarelo.frame.height/1.75)
 
 
-            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle)
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle90*3)
             self.viewVerdeEscuro.center = CGPoint(x: self.viewAmarelo.center.x - self.viewAmarelo.frame.width/1.25 + 3, y: self.viewAmarelo.center.y)
 
         })
