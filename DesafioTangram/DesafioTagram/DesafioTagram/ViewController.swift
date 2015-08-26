@@ -123,7 +123,8 @@ class ViewController: UIViewController {
     
     func doubleTap() {
         
-        //peixe
+        println("double tap")
+        
         
     }
     
@@ -159,8 +160,8 @@ class ViewController: UIViewController {
             case UISwipeGestureRecognizerDirection.Down:
                 self.drawDog()
                 println("Swiped down")
-            case UISwipeGestureRecognizerDirection.Left://cavalo
-                self.drawHorse()
+            case UISwipeGestureRecognizerDirection.Left:
+                println("Swiped left")
             case UISwipeGestureRecognizerDirection.Right:
                 self.drawSwan()
             
@@ -169,51 +170,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
-
-    func drawHorse(){
-
-        UIView.animateWithDuration(0.5, animations: {
-            var angle45 = CGFloat(M_PI/4)
-            var angle = CGFloat(M_PI * 2 - M_PI/4)
-            //self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
-            self.viewLaranja.center = CGPoint(x: 245, y: 275)
-            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45*6)
-
-            
-            self.viewVerdeClaro.center = CGPoint(x: 180, y: 300 - self.viewLaranja.frame.height/2)
-            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle45*7)
-            
-            self.viewAmarelo.center = CGPoint(x: 156, y: 142)
-            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*5)
-            
-            self.viewVermelho.center = CGPoint(x: 180, y: 171 )
-            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45*1)
-
-            
-            self.viewAzulClaro.center = CGPoint(x: 100, y: 218)
-            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle45*2)
-
-            
-            let image = UIImage(CGImage: self.imageAzulEscuro?.CGImage, scale: self.imageAzulEscuro!.scale, orientation: UIImageOrientation.UpMirrored)
-            self.viewAzulEscuro.image = image
-            
-            self.viewVerdeEscuro.center = CGPoint(x: 193, y: 354)
-            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*3)
-            
-            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*2)
-            self.viewAzulEscuro.center = CGPoint(x: 298, y: 336)
-            self.viewAzulEscuro.transform = CGAffineTransformScale(self.viewAzulEscuro.transform, 1, -1)
-        })
-    }
-
-
-}
-
-
-
-
-
     
     func drawCat() {
         
