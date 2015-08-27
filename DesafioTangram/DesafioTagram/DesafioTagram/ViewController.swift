@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     var viewAmarelo: UIImageView!
     var viewVerdeEscuro: UIImageView!
     var viewVermelho: UIImageView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -123,8 +122,7 @@ class ViewController: UIViewController {
     
     func doubleTap() {
         
-        println("double tap")
-        
+        self.drawFish()
         
     }
     
@@ -156,11 +154,13 @@ class ViewController: UIViewController {
             
             switch swipeGesture.direction {
             case UISwipeGestureRecognizerDirection.Up:
+                self.drawRabbit()
                 println("Swiped up")
             case UISwipeGestureRecognizerDirection.Down:
+                self.drawDog()
                 println("Swiped down")
             case UISwipeGestureRecognizerDirection.Left:
-                println("Swiped left")
+                self.drawHorse()
             case UISwipeGestureRecognizerDirection.Right:
                 self.drawSwan()
             
@@ -246,6 +246,146 @@ class ViewController: UIViewController {
             
         })
     }
+
+func drawDog() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+            var angle45 = CGFloat(M_PI/4)
+            var angle90 = CGFloat(M_PI/2)
+
+         
+            self.viewLaranja.center = CGPoint(x: 180, y: 200)
+
+            
+            self.viewVerdeClaro.center = CGPoint(x: self.viewLaranja.center.x - (self.viewVerdeClaro.frame.width + 5), y: self.viewLaranja.center.y + 12)
+
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
+
+
+            self.viewAzulClaro.center = CGPoint(x: self.viewVerdeClaro.center.x - self.viewVerdeClaro.frame.width/3.5, y: self.viewVerdeClaro.center.y + (self.viewAzulClaro.frame.height - 35))
+            
+
+            self.viewAmarelo.center = CGPoint(x: self.viewLaranja.center.x + (self.viewAmarelo.frame.width/2)+1, y: self.viewLaranja.center.y + 1)
+
+
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45)
+
+            self.viewAzulEscuro.center = CGPoint(x: self.viewLaranja.center.x + (self.viewLaranja.frame.width/2)+1, y: self.viewLaranja.center.y + self.viewLaranja.frame.height - 9)
+
+
+            self.viewVermelho.center = CGPoint(x: self.viewAmarelo.center.x + self.viewVermelho.frame.width, y: self.viewAmarelo.center.y - self.viewVermelho.frame.height/2)
+
+
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewVermelho.center.x - self.viewVerdeEscuro.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height + 20)
+
+        })
+    }
+
+func drawRabbit() {
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+            var angle45 = CGFloat(M_PI/4)
+            var angle90 = CGFloat(M_PI/2)
+            var angle = CGFloat(M_PI * 2)
+
+            
+
+            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewVermelho.center = CGPoint(x: 100, y: 250)
+
+
+           
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
+            self.viewAzulEscuro.transform = CGAffineTransformScale(self.viewAzulEscuro.transform, 1, -1)
+            self.viewAzulEscuro.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y - self.viewVermelho.frame.height/2-1)
+
+    
+
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewLaranja.center = CGPoint(x: self.viewVermelho.center.x + self.viewVermelho.frame.width/2, y: self.viewVermelho.center.y + self.viewLaranja.frame.height/2)
+
+            
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle90*3 + angle45)
+            self.viewVerdeClaro.center = CGPoint(x: self.viewLaranja.center.x + self.viewVerdeClaro.frame.width/3, y: self.viewLaranja.center.y + self.viewLaranja.frame.height/3 + 1)
+
+            
+            self.viewAzulClaro.center = CGPoint(x: self.viewLaranja.center.x - self.viewAzulClaro.frame.height/1.75 - 3, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7)
+
+
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle90)
+            self.viewAmarelo.center = CGPoint(x: self.viewVerdeClaro.center.x  - self.viewVerdeClaro.frame.width/10 + 4, y: self.viewVerdeClaro.center.y + self.viewAmarelo.frame.height/1.75)
+
+
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle90*3)
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewAmarelo.center.x - self.viewAmarelo.frame.width/1.25 + 3, y: self.viewAmarelo.center.y)
+
+        })
+    }
+
+    
+    func drawFish(){
+
+        UIView.animateWithDuration(0.5, animations: {
+            self.normalizeAngles()
+
+            var angle45 = CGFloat(M_PI/4)
+            var angle = CGFloat(M_PI * 2 - M_PI/4)
+            //self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
+            self.viewLaranja.center = CGPoint(x: 180, y: 275)
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45*5)
+            
+            
+            self.viewVerdeClaro.center = CGPoint(x: 180, y: 300 - self.viewLaranja.frame.height/2)
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle45*1)
+            
+            self.viewAmarelo.center = CGPoint(x: 128 + self.viewVerdeClaro.frame.width/2, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7 + 40)
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*7)
+            
+            self.viewVermelho.center = CGPoint(x: 110 + self.viewAmarelo.center.x - 20, y: self.viewAmarelo.center.y - self.viewAmarelo.frame.height/1.5 + 100)
+            self.viewAzulClaro.center = CGPoint(x: 225, y: 180)
+            
+            self.viewVerdeEscuro.center = CGPoint(x: 226.79, y: 344.51)
+            
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*6)
+            
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*7)
+            self.viewAzulEscuro.center = CGPoint(x: 155 + self.viewVerdeClaro.frame.width/2, y: self.viewVerdeClaro.center.y - self.viewVerdeClaro.frame.height/7 + 93)
+        })
+    }
+        
+    
+    func drawHorse(){
+        UIView.animateWithDuration(0.5, animations: {
+            var angle45 = CGFloat(M_PI/4)
+            var angle = CGFloat(M_PI * 2 - M_PI/4)
+            //self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
+            self.viewLaranja.center = CGPoint(x: 245, y: 275)
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle45*6)
+            
+            
+            self.viewVerdeClaro.center = CGPoint(x: 180, y: 300 - self.viewLaranja.frame.height/2)
+            self.viewVerdeClaro.transform = CGAffineTransformMakeRotation(angle45*7)
+            
+            self.viewAmarelo.center = CGPoint(x: 156, y: 142)
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45*5)
+            
+            self.viewVermelho.center = CGPoint(x: 180, y: 171 )
+            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45*1)
+            
+            
+            self.viewAzulClaro.center = CGPoint(x: 100, y: 218)
+            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle45*2)
+            
+            self.viewVerdeEscuro.center = CGPoint(x: 193, y: 354)
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle45*3)
+            
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45*2)
+            self.viewAzulEscuro.center = CGPoint(x: 298, y: 336)
+        })
+    }
+    
+    
+    
     
     func drawHouse() {
         UIView.animateWithDuration(0.5, animations: {
