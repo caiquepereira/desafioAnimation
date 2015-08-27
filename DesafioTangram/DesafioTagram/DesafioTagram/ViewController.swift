@@ -79,6 +79,7 @@ class ViewController: UIViewController {
     }
 
     func initViews() {
+        
         let imageVerdeClaro = UIImage(named: "Layer5.png")
         self.viewVerdeClaro = UIImageView(image: imageVerdeClaro!)
         self.viewVerdeClaro.frame = CGRectMake(34, 5, 75, 150)
@@ -116,18 +117,20 @@ class ViewController: UIViewController {
     }
     
     func oneTap() {
-        println("one tap")
+        
         self.drawCat()
+        println("one tap")
     }
     
     func doubleTap() {
         
         self.drawFish()
-        
+        println("double tap")
     }
     
     func tripleTap() {
         
+        self.drawBoat()
         println("triple tap")
         
         
@@ -142,6 +145,7 @@ class ViewController: UIViewController {
     
     func longPressed(sender: UILongPressGestureRecognizer)
     {
+        self.backToInitViews()
         println("longpressed")
     }
     
@@ -384,6 +388,41 @@ func drawRabbit() {
         })
     }
     
+    func drawBoat(){
+        
+        
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.normalizeAngles()
+            
+            var angle45 = CGFloat(M_PI/4)
+            var angle90 = CGFloat(M_PI/2)
+            var angle = CGFloat(M_PI)
+            
+            self.viewAzulEscuro.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewAzulEscuro.center = CGPoint(x: 150, y: 300)
+            
+            self.viewAmarelo.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewAmarelo.center = CGPoint(x: self.viewAzulEscuro.center.x  + self.viewAzulEscuro.frame.width/2 + 1, y: self.viewAzulEscuro.center.y - self.viewAmarelo.frame.height/4)
+            
+            self.viewVermelho.transform = CGAffineTransformMakeRotation(angle45)
+            self.viewVermelho.center = CGPoint(x: self.viewAzulEscuro.center.x, y: self.viewAzulEscuro.center.y - self.viewVermelho.frame.height/2 - 5)
+            
+            self.viewAzulClaro.transform = CGAffineTransformMakeRotation(angle + angle45)
+            self.viewAzulClaro.center = CGPoint(x: self.viewVermelho.center.x + 13, y: self.viewVermelho.center.y - self.viewAzulClaro.frame.height/2 - 1)
+            
+            self.viewVerdeEscuro.transform = CGAffineTransformMakeRotation(angle90 + angle45)
+            self.viewVerdeEscuro.center = CGPoint(x: self.viewVermelho.center.x - self.viewVerdeEscuro.frame.width/2 - 1, y: self.viewVermelho.center.y + 13)
+            
+            self.viewVerdeClaro.center = CGPoint(x: self.viewAmarelo.center.x + 20, y: self.viewAmarelo.center.y - self.viewVerdeClaro.frame.height/2 - 10)
+            
+            self.viewLaranja.transform = CGAffineTransformMakeRotation(angle)
+            self.viewLaranja.center = CGPoint(x: self.viewVerdeClaro.center.x + self.viewLaranja.frame.width/4 + 1, y: self.viewVerdeClaro.center.y + self.viewLaranja.frame.height/2)
+            
+            
+        })
+        
+    }
     
     
     
@@ -409,6 +448,26 @@ func drawRabbit() {
             self.viewVermelho.center = CGPoint(x: self.viewAzulEscuro.center.x + self.viewAzulEscuro.frame.width/4, y: self.viewAzulEscuro.center.y - self.viewAzulEscuro.frame.height/2)
             
         })
+    }
+    
+    func backToInitViews() {
+        
+        self.normalizeAngles()
+        
+        self.viewVerdeClaro.frame = CGRectMake(34, 5, 75, 150)
+        
+        self.viewLaranja.frame = CGRectMake(34, 5, 150, 75)
+       
+        self.viewAzulClaro.frame = CGRectMake(147, 5, 37, 75)
+        
+        self.viewAmarelo.frame = CGRectMake(109, 80, 75, 75)
+
+        self.viewVermelho.frame = CGRectMake(109, 42, 75, 75)
+        
+        self.viewVerdeEscuro.frame = CGRectMake(72, 80, 75, 37)
+
+        self.viewAzulEscuro.frame = CGRectMake(34, 117, 112, 37)
+
     }
     
     func normalizeAngles() {
